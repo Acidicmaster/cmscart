@@ -1,0 +1,61 @@
+<html>
+<header> <% include ../_layouts/adminheader %></header>
+  
+  <div class="container">   
+       <h2 class="page-title">Add a Page</h2>
+    <a href="admin/pages" class="btn btn-primary">Back to all pages</a>
+        <br><br>
+    <form method="POST" action="/admin/add-page" id="myform"
+        <div class="form-control">
+            <div class="form-group">   
+                <label for="">Title</label>
+                <input type="text" class="form-control" id="title" name="title" value="<%= title %>" placeholder="Title">
+            </div>
+            <div class="form-group">   
+                <label for="">Slug</label>
+                <input type="text"class="form-control" id="slug" name="slug" value="<%= slug %>" placeholder="slug">
+            </div>
+            <div class="form-group">   
+                <label for="">Content</label>
+                <textarea  id="content" class="form-control" name="content" placeholder="content" cols="30" rows="10"></textarea>
+            </div>
+         <button type="submit" class="btn btn-primary">submit</button>
+    </div>   
+  </form> 
+</div>
+
+  
+  </html>
+ <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+            $('#myform').on('submit', function(evt){
+            evt.preventDefault();
+            var action = $(this).attr('action');
+            var $container = $(this).closest('.container');
+            var data={
+                    title: $('#title').val(),
+                    slug: $('#slug').val(),
+                    content : $('#content').val()
+                    //add other properties similarly
+                    }
+            debugger;
+            $.ajax({
+            url: action,
+            type: 'POST',
+            data : data,
+           
+            success: function(data){
+            if(data.success){
+            $container.html('<h2>Thank you!</h2>');
+            } else {
+            $container.html('There was a problem.');
+            }
+            },
+            error: function(){
+            $container.html('There was a problem.');
+            }
+            });
+            });
+            });
+    </script>-->
